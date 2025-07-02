@@ -1,27 +1,23 @@
 import React, { useState } from "react";
-import { SafeAreaView, View, StyleSheet } from "react-native";
+import { SafeAreaView, View, StyleSheet, TouchableOpacity, Text, Modal } from "react-native";
 import TopBar from "./components/topbar";
 import TasksList from "./components/tasklist";
 import AddTaskModal from "./components/AddTaskModal";
-import { useColorScheme } from "react-native";
-import { TouchableOpacity, Text, Modal } from "react-native";
 import SearchBar from "./components/Searchbar";
 import { LinearGradient } from "expo-linear-gradient";
 import { EucalyptusTheme } from "./components/themes";
+import NameModal from "./components/nameModal";
 
 export default function App() {
-    const [tasks, setTasks] = useState([
-      {id: "1", title: "Welcome!", description: "Edit with the pencil icon, and delete with the trash icon. Click on the task itself to mark it as complete!", completed: false},
-    ]);
-
-
+  const [tasks, setTasks] = useState([
+    {id: "1", title: "Welcome!", description: "Edit with the pencil icon, and delete with the trash icon. Click on the task itself to mark it as complete!", completed: false},
+  ]);
+  const [username, setUserName] = useState("User");
+  const [showNameModal, setShowNameModal] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
-  const colorScheme = useColorScheme();
-  const isDarkMode = colorScheme === "dark";
   const [infoVisible, setInfoVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
-
   const filteredTasksBySearch = tasks.filter((task) => {
     const lowerSearch = searchText.toLowerCase();
     return (
@@ -106,11 +102,21 @@ return (
     style={{ flex: 1 }}
   >
     <SafeAreaView style={[styles.container, { backgroundColor: 'transparent' }]}>
+      <NameModal
+        visible={showNameModal}
+        onSubmit={(name) => {
+          setUserName(name);
+          setShowNameModal(false);
+        }}
+      />
+
       <TopBar
         progress={progress}
         completedTasks={completedCount}
         totalTasks={tasks.length}
         onAdd={openAddTaskModal}
+        username={username}
+
       />
       <SearchBar
         searchText={searchText}

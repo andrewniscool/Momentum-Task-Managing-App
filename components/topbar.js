@@ -5,7 +5,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import ProgressBar from "./Progressbar";
 import { EucalyptusTheme } from "./themes";
 
-export default function TopBar({ onAdd, progress, completedTasks, totalTasks }) {
+export default function TopBar({ onAdd, progress, completedTasks, totalTasks, username }) {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const fadeAnimMotto = useRef(new Animated.Value(0)).current;
 
@@ -25,9 +25,19 @@ export default function TopBar({ onAdd, progress, completedTasks, totalTasks }) 
     <View style={styles.container}>
       <View style={styles.topBar}>
         <View style={styles.titleContainer}>
-          <Animated.Text style={[styles.appName, { opacity: fadeAnim }]}>
-            Momentum
-          </Animated.Text>          
+          <Animated.Text style={[styles.greetingText, { opacity: fadeAnim }]}>
+            {username ? (
+              <>
+                Hello,{'\n'}<Text style={styles.appName}>{username}</Text>
+                
+              </>)
+              :
+              (
+              <>
+                Welcome to{'\n'}<Text style={styles.appName}>Momentum</Text>
+              </>
+            )}
+          </Animated.Text>
           <Animated.Text style={[styles.appMotto, { opacity: fadeAnimMotto }]}>
             Ready to be productive?
           </Animated.Text>          
@@ -38,7 +48,7 @@ export default function TopBar({ onAdd, progress, completedTasks, totalTasks }) 
       </View>
 
       <View style={styles.progressBarContainer}>
-        <Text style={styles.progressLabel}>Progress</Text>
+        <Text style={styles.progressLabel}>Your Progress</Text>
         <ProgressBar progress={progress} />
         <View style={styles.progressStats}>
           <Text style={styles.progressText}>
@@ -61,7 +71,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 20,
     paddingHorizontal: 10,
     borderRadius: 16,
     shadowColor: "#000",
@@ -75,13 +84,19 @@ const styles = StyleSheet.create({
   },
   appName: {
     color: "#1a1a1a",
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: "700",
-    letterSpacing: 0,
     textShadowColor: "rgba(0,0,0,0.1)",
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 4,
-
+  },
+  greetingText: {
+    color: "#1a1a1a",
+    fontSize: 20,
+    fontWeight: "400",
+    textShadowColor: "rgba(0,0,0,0.1)",
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 4,
   },
   appMotto: {
     color: "#6b7280",
