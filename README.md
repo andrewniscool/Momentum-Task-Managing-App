@@ -13,14 +13,14 @@ Getting Started
 
 1. Clone the repository
 
-- git clone https://github.com/andrewniscool/Momentum-Task-Managing-App.git, 
+- git clone https://github.com/andrewniscool/Momentum-Task-Managing-App.git
 - cd Momentum-Task-Managing-App
 
 2. Install the needed dependencies: run this in your terminal
 
 - npm install
 
-- also make sure you have node.js installed.
+- Also, please make sure you have node.js installed.
 
 3. Run the app: use this command to run the app
 
