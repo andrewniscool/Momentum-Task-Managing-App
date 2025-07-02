@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import ProgressBar from "./Progressbar";
-import { EucalyptusTheme } from "./themes";
 
 export default function TopBar({ onAdd, progress, completedTasks, totalTasks, username }) {
   const fadeAnim = useRef(new Animated.Value(0)).current;

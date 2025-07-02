@@ -47,3 +47,4 @@ This app uses the following libraries:
 - **expo-linear-gradient** (^14.1.5): Adds gradient components.
 - **react** (19.0.0): React framework.
 - **react-native** (0.79.4): React Native core.
+- **react-native-vector-icons** (^10.2.0): For Search Bar

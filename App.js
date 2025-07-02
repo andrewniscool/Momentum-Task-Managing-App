@@ -5,7 +5,6 @@ import TasksList from "./components/tasklist";
 import AddTaskModal from "./components/AddTaskModal";
 import SearchBar from "./components/Searchbar";
 import { LinearGradient } from "expo-linear-gradient";
-import { EucalyptusTheme } from "./components/themes";
 import NameModal from "./components/nameModal";
 
 export default function App() {
@@ -25,6 +24,10 @@ export default function App() {
       (task.description && task.description.toLowerCase().includes(lowerSearch))
     );
   });
+
+  const EucalyptusTheme = {
+    gradient: ["#6EE7B7", "#93C5FD"], // Green to blue
+  };
   const toggleInfoModal = () => {
     setInfoVisible(!infoVisible);
   };
