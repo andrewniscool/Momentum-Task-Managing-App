@@ -13,20 +13,19 @@ Getting Started
 
 1. Clone the repository
 
-git clone https://github.com/andrewniscool/Momentum-Task-Managing-App.git \n
-cd Momentum-Task-Managing-App
+- git clone https://github.com/andrewniscool/Momentum-Task-Managing-App.git, 
+- cd Momentum-Task-Managing-App
 
 2. Install the needed dependencies: run this in your terminal
 
-npm install
+- npm install
 
-also make sure you have node.js installed.
+- also make sure you have node.js installed.
 
 3. Run the app: use this command to run the app
 
-npx expo start
-
-After running the app, use your phone to scan the QR code with the Expo Go app (Android) or the Camera app (iOS).
+- npx expo start
+- After running the app, use your phone to scan the QR code with the Expo Go app (Android) or the Camera app (iOS).
 
 
 
