@@ -13,8 +13,8 @@ Getting Started
 
 1. Clone the repository
 
-git clone 
-cd 
+git clone https://github.com/andrewniscool/Momentum-Task-Managing-App.git \n
+cd Momentum-Task-Managing-App
 
 2. Install the needed dependencies: run this in your terminal
 
