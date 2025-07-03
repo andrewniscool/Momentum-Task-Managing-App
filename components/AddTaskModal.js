@@ -18,7 +18,7 @@ export default function AddTaskModal({
   visible, 
   onClose, 
   onSave, 
-  editingTask = null // Add editingTask prop
+  editingTask = null
 }) {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");

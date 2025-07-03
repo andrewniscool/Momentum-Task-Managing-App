@@ -32,6 +32,7 @@ Getting Started
 Using Momentum
 
 - When first loaded in, app will ask for your name. This is only to fill in the title and have the app call you by name, but this step is optional.
+- App also has an initial welcome task that explains how tasks work. This task can be deleted or edited at any time. 
 
 - Add a Task: Tap the + button in the top right to open the add task modal. Enter a title and (optional) description.
 - Mark Complete: Tap anywhere on a task card (except the icons) to toggle completion. Completed tasks are crossed out.

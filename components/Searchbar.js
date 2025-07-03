@@ -5,11 +5,11 @@ export default function SearchBar({ searchText, onChangeText }) {
   return (
     <View style={styles.container}>
       <Feather
-        name="search"
+        name="search" // magnifying glass
         size={20}
         color="#888"
         style={styles.icon}
-      />
+      /> 
       <TextInput
         placeholder="Search tasks..."
         placeholderTextColor="#888" // Placeholder color
